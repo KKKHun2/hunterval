@@ -115,8 +115,8 @@ const IntervalWorkout = () => {
         <button
           onClick={handleStart}
           className={`${
-            isStarted ? 'bg-red-500 hover:bg-red-600' : 'bg-blue-500 hover:bg-blue-600'
-          } text-white px-6 py-3 rounded-full transition mb-6`}
+            isStarted ? 'w-full max-w-[30%] bg-red-500 hover:bg-red-600' : 'w-full max-w-[30%] bg-blue-500 hover:bg-blue-600'
+          } text-white px-6 py-2 rounded transition mb-6`}
         >
           {isStarted ? 'Stop' : 'Start'}
         </button>
@@ -166,7 +166,12 @@ const IntervalWorkout = () => {
           ))}
         </div>
 
-        <button onClick={handleReset} className="mb-10 px-4 py-2 bg-gray-200 hover:bg-gray-300 text-sm rounded">리셋</button>
+        <button
+          onClick={handleReset}
+          className="mb-10 px-4 py-2 w-full bg-gray-200 hover:bg-gray-300 text-sm rounded"
+        >
+          리셋
+        </button>
 
         <div className="flex justify-center gap-6 mb-10">
           <div className="w-28 rounded-lg p-3 bg-white shadow text-sm text-center">🧍 느리게 걷기<br />{slowCount}회</div>
