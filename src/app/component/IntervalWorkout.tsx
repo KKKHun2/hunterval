@@ -25,7 +25,7 @@ const formatTime = (seconds: number): string => {
 
 const IntervalWorkout = () => {
   const [intervals, setIntervals] = useState<Interval[]>(defaultIntervals);
-  const [currentIndex, setCurrentIndex] = useState<number>(-1);
+  const [currentIndex, setCurrentIndexx] = useState<number>(-1);
   const [timeLeft, setTimeLeft] = useState<number>(0);
   const [totalTime, setTotalTime] = useState<number>(0);
   const [routineCount, setRoutineCount] = useState<number>(0);
@@ -143,7 +143,7 @@ const IntervalWorkout = () => {
                 }`}
               >
                 <div className="text-sm font-semibold whitespace-pre-line leading-tight text-center">{interval.type}</div>
-                <div className="text-xs text-gray-500">{interval.speed} km/h</div>
+                <div className="text-xs text-gray-500">속도: {interval.speed}</div>
               </div>
             );
           })}
