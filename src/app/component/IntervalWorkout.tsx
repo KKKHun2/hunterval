@@ -25,7 +25,9 @@ const formatTime = (seconds: number): string => {
 
 const IntervalWorkout = () => {
   const [intervals, setIntervals] = useState<Interval[]>(defaultIntervals);
-  const [currentIndex, setCurrentIndexx] = useState<number>(-1);
+  const [initialIntervals] = useState<Interval[]>(() => defaultIntervals.map(i => ({ ...i }))); //항상 초기값으로 리셋되도록 설정
+
+  const [currentIndex, setCurrentIndex] = useState<number>(-1);
   const [timeLeft, setTimeLeft] = useState<number>(0);
   const [totalTime, setTotalTime] = useState<number>(0);
   const [routineCount, setRoutineCount] = useState<number>(0);
@@ -59,8 +61,9 @@ const IntervalWorkout = () => {
   }, []);
 
   const handleReset = useCallback(() => {
-    setIntervals(defaultIntervals.map(i => ({ ...i })));
-  }, [intervals]);
+    setIntervals(initialIntervals.map(i => ({ ...i })));
+  }, [initialIntervals]);
+
 
   const progressPercent = useMemo(
     () => currentIndex >= 0 ? ((intervals[currentIndex].duration - timeLeft) / intervals[currentIndex].duration) * 100 : 0,
