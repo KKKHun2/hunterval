@@ -175,8 +175,8 @@ const IntervalWorkout = () => {
         </div>
       </div>
 
-      <div className="text-center text-sm text-gray-700 mb-2">루틴 완료 횟수: <span className="font-semibold">{routineCount}</span>회</div>
       <div className="border-2 border-gray-800 py-3 w-72 text-lg font-medium rounded-lg text-center bg-white shadow">
+        <div className="text-center text-sm text-gray-700 mb-2">루틴 완료 횟수: <span className="font-semibold">{routineCount}</span>회</div>
         전체 운동 시간: {formatTime(totalTime)}
       </div>
     </div>
